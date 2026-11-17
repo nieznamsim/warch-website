@@ -24,6 +24,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: 'https://nieznamsim.github.io',
+  base: '/warch-website',
   output: 'static',
 
   // Prefetch links as they enter the viewport for snappier navigations
