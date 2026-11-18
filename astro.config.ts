@@ -26,8 +26,11 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   site: 'https://nieznamsim.github.io',
   base: '/warch-website',
+  build: {
+    assets: 'assets', // Zmienia nazwę folderu z _astro na assets
+  },
   output: 'static',
-
+  
   // Prefetch links as they enter the viewport for snappier navigations
   // (works together with <ClientRouter />, which enables prefetch by default).
   prefetch: {
