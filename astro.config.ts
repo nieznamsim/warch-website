@@ -54,7 +54,18 @@ export default defineConfig({
   ],
 
   integrations: [
+    
     sitemap(),
+     {
+      name: 'astro:assets',
+      hooks: {
+        'astro:config:setup': ({ config }) => {
+          config.build.assets = config.build.assets || 'assets';
+          config.build.assetsPrefix = config.base;
+        },
+      },
+    },
+    
     mdx(),
     icon({
       // Local SVG icons (used as <Icon name="file-name" />) live next to the other assets.
